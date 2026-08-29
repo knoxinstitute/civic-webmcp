@@ -2,11 +2,13 @@
 
 **An open profile and reference implementation for agent-ready public policy websites.**
 
+**Public project site:** [PolicyMCP.org](https://policymcp.org/)
+
 Civic WebMCP asks a simple question: **what should public-policy publishing look like when humans increasingly research alongside AI agents?**
 
 The project uses the browser-native WebMCP API (`document.modelContext`) to expose public policy as structured, attributable civic knowledge while keeping the normal human website as the source of record.
 
-Civic WebMCP is an open civic technology project initiated by the **Henry Knox Institute**. The goal is not to make AI decide public questions. The goal is to make policy information more transparent, more attributable, easier to interrogate, and easier for humans to evaluate.
+Civic WebMCP is an open civic technology project initiated by the **Henry Knox Institute**. **PolicyMCP** is the public-facing home for the project and its broader mission. The goal is not to make AI decide public questions. The goal is to make policy information more transparent, more attributable, easier to interrogate, and easier for humans to evaluate.
 
 ## What the profile adds
 
