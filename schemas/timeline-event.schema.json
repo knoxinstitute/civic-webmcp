@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civic-webmcp.org/schema/timeline-event.schema.json",
+  "title": "CivicTimelineEvent",
+  "type": "object",
+  "required": ["id", "resourceId", "date", "label", "description", "sourceIds", "demo"],
+  "properties": {
+    "id": { "type": "string" },
+    "resourceId": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "label": { "type": "string" },
+    "description": { "type": "string" },
+    "sourceIds": { "type": "array", "items": { "type": "string" } },
+    "demo": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}
