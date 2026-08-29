@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civic-webmcp.org/schema/action-opportunity.schema.json",
+  "title": "CivicActionOpportunity",
+  "type": "object",
+  "required": ["id", "resourceId", "actionType", "title", "description", "jurisdiction", "sourceIds", "demo"],
+  "properties": {
+    "id": { "type": "string" },
+    "resourceId": { "type": "string" },
+    "actionType": { "type": "string", "enum": ["hearing", "public_comment", "meeting", "deadline", "information_session"] },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "startsAt": { "type": "string", "format": "date-time" },
+    "endsAt": { "type": "string", "format": "date-time" },
+    "jurisdiction": { "type": "object", "required": ["type", "name"], "properties": { "type": { "type": "string", "enum": ["federal", "state", "local", "tribal", "international", "illustrative"] }, "name": { "type": "string" }, "code": { "type": "string" } }, "additionalProperties": false },
+    "url": { "type": "string" },
+    "sourceIds": { "type": "array", "items": { "type": "string" } },
+    "demo": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

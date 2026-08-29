@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civic-webmcp.org/schema/position.schema.json",
+  "title": "CivicPosition",
+  "type": "object",
+  "required": ["id", "resourceId", "actor", "stance", "summary", "sourceIds", "demo"],
+  "properties": {
+    "id": { "type": "string" },
+    "resourceId": { "type": "string" },
+    "actor": { "type": "object", "required": ["name"], "properties": { "name": { "type": "string" }, "url": { "type": "string" } }, "additionalProperties": false },
+    "stance": { "type": "string", "enum": ["support", "oppose", "mixed", "neutral_analysis"] },
+    "summary": { "type": "string" },
+    "sourceIds": { "type": "array", "items": { "type": "string" } },
+    "demo": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

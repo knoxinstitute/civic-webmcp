@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civic-webmcp.org/schema/resource.schema.json",
+  "title": "CivicResource",
+  "type": "object",
+  "required": ["id", "resourceType", "title", "summary", "publisher", "jurisdiction", "publishedAt", "updatedAt", "status", "topics", "claims", "demo"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "resourceType": { "type": "string", "enum": ["policy_proposal", "legislation", "policy_analysis", "research", "regulation", "legal_document"] },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "publisher": { "$ref": "#/$defs/publisher" },
+    "jurisdiction": { "$ref": "#/$defs/jurisdiction" },
+    "publishedAt": { "type": "string", "format": "date" },
+    "updatedAt": { "type": "string", "format": "date" },
+    "status": { "type": "string", "enum": ["proposed", "introduced", "active", "enacted", "implemented", "archived"] },
+    "topics": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "url": { "type": "string" },
+    "claims": { "type": "array", "items": { "type": "object", "required": ["id", "text", "kind", "sourceIds"], "properties": { "id": { "type": "string" }, "text": { "type": "string" }, "kind": { "type": "string", "enum": ["fact", "analysis", "projection", "value_judgment"] }, "sourceIds": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } },
+    "sourceIds": { "type": "array", "items": { "type": "string" } },
+    "positionIds": { "type": "array", "items": { "type": "string" } },
+    "timelineIds": { "type": "array", "items": { "type": "string" } },
+    "relatedResourceIds": { "type": "array", "items": { "type": "string" } },
+    "actionOpportunityIds": { "type": "array", "items": { "type": "string" } },
+    "demo": { "type": "boolean" }
+  },
+  "$defs": {
+    "publisher": { "type": "object", "required": ["name"], "properties": { "name": { "type": "string" }, "url": { "type": "string" } }, "additionalProperties": false },
+    "jurisdiction": { "type": "object", "required": ["type", "name"], "properties": { "type": { "type": "string", "enum": ["federal", "state", "local", "tribal", "international", "illustrative"] }, "name": { "type": "string" }, "code": { "type": "string" } }, "additionalProperties": false }
+  },
+  "additionalProperties": false
+}

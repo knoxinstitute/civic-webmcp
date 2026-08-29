@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civic-webmcp.org/schema/source.schema.json",
+  "title": "CivicSource",
+  "type": "object",
+  "required": ["id", "title", "sourceType", "publisher", "description", "supportsClaimIds", "demo"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "sourceType": { "type": "string", "enum": ["primary", "legal_text", "empirical", "official_data", "analysis", "commentary"] },
+    "publisher": { "type": "object", "required": ["name"], "properties": { "name": { "type": "string" }, "url": { "type": "string" } }, "additionalProperties": false },
+    "publicationDate": { "type": "string", "format": "date" },
+    "url": { "type": "string" },
+    "description": { "type": "string" },
+    "supportsClaimIds": { "type": "array", "items": { "type": "string" } },
+    "demo": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}
